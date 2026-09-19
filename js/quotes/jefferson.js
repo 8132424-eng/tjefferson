@@ -53,7 +53,48 @@ registerAuthorQuotes("jefferson", [
       en: "United States Declaration of Independence (1776)"
     }
   },
-  
+  // --------------------------------------------------------
+  // Quote 4
+  // --------------------------------------------------------
+{
+       fi: "Ennustan amerikkalaisille tulevaa onnea, jos he " +
+           "pystyvät estämään hallitusta tuhlaamasta kansan työn hedelmiä sillä verukkeella, että se huolehtii heistä.",
+       sv: "Jag förutspår amerikaner framtida lycka under förutsättning" +
+           " att de kan förhindra att regeringen slösar bort folkets arbete under förevändning att ta hand om dem.",
+       en: "…if we can but prevent the government from wasting the labours of the people, " +
+           "under the pretence of taking care of them, they must become happy.",
+       source: {
+         fi: "Kirje Thomas Cooperille, 29.11.1802",
+         sv: "Brevet till Thomas Cooper, 29.11.1802",
+         en: "The letter to Thomas Cooper, 29.11.1802"
+       }
+     },
+   // --------------------------------------------------------
+  // Quote 5
+  // --------------------------------------------------------
+{
+       fi: "Suomenkielinen sitaatti tähän.",
+       sv: "Svensk översättning här.",
+       en: "Original English text here.",
+       source: {
+         fi: "Lähteen nimi",
+         sv: "Källans namn",
+         en: "Source title"
+       }
+     },
+ // --------------------------------------------------------
+  // Quote 6
+  // --------------------------------------------------------
+{
+       fi: "Suomenkielinen sitaatti tähän.",
+       sv: "Svensk översättning här.",
+       en: "Original English text here.",
+       source: {
+         fi: "Lähteen nimi",
+         sv: "Källans namn",
+         en: "Source title"
+       }
+     },
   // ==========================================================
   // ▼▼▼ ADD NEW QUOTE HERE ▼▼▼
   //

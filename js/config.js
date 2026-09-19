@@ -18,6 +18,56 @@ window.AUTHORS = [
     name: "Thomas Jefferson",
     years: "1743 – 1826"
   }
+,{
+       id: "gwashington",
+       name: "George Washinton",
+       years: "1732 – 1799"
+     }
+,{
+       id: "jadams",
+       name: "John Adams",
+       years: "1735 – 1826"
+     }
+,{
+       id: "bfranklin",
+       name: "Benjamin Franklin",
+       years: "1706 – 1790"
+     }
+,{
+       id: "jmadison",
+       name: "James Madison",
+       years: "1751 – 1836"
+     }
+,{
+       id: "harrystruman",
+       name: "Harry S. Truman",
+       years: "1894 – 1972"
+     }
+,{
+       id: "gwashington",
+       name: "George Washinton",
+       years: "1732 – 1799"
+     }
+,{
+       id: "gwashington",
+       name: "George Washinton",
+       years: "1732 – 1799"
+     }
+,{
+       id: "gwashington",
+       name: "George Washinton",
+       years: "1732 – 1799"
+     }
+,{
+       id: "gwashington",
+       name: "George Washinton",
+       years: "1732 – 1799"
+     }
+,{
+       id: "gwashington",
+       name: "George Washinton",
+       years: "1732 – 1799"
+     }
 
   // ==========================================================
   // ▼▼▼ ADD NEW AUTHOR HERE ▼▼▼

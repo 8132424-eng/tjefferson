@@ -35,18 +35,61 @@ h2 {
 }
 .subhead { color: #4f5b6b; margin-bottom: 2rem; font-size: 1.1rem; }
 
-/* ---------- Top navigation ---------- */
+/* ============================================================
+   TOP NAVIGATION — HORIZONTAL SCROLL WITH ACTIVE STATE
+   ============================================================
+   - Menu items stay on ONE line (flex-wrap: nowrap).
+   - If they don't fit, user scrolls left/right.
+   - The currently open author (or Home) gets an .active class
+     and a persistent underline. JavaScript also scrolls the
+     active item into view so it's always within the screen.
+   ============================================================ */
 .top-nav {
-  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem;
-  margin-bottom: 2rem; padding-bottom: .75rem;
+  display: flex;
+  flex-wrap: nowrap;                  /* forbid wrapping to a new line */
+  overflow-x: auto;                   /* enable horizontal scroll */
+  gap: .75rem 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: .75rem;
   border-bottom: 2px solid #e4ddd4;
+  white-space: nowrap;                /* do not break author names */
+  -webkit-overflow-scrolling: touch;  /* smooth scroll on iPhone / iPad */
+  scrollbar-width: thin;              /* thin scrollbar in Firefox */
+  scrollbar-color: #b7a68b #eaeef2;   /* thumb / track colors in Firefox */
+  scroll-behavior: smooth;            /* smooth programmatic scroll */
 }
+
+/* Scrollbar styling for Chrome, Edge, Safari, Opera */
+.top-nav::-webkit-scrollbar {
+  height: 6px;
+}
+.top-nav::-webkit-scrollbar-thumb {
+  background: #b7a68b;
+  border-radius: 3px;
+}
+.top-nav::-webkit-scrollbar-track {
+  background: #eaeef2;
+  border-radius: 3px;
+}
+
+/* Menu links — must not shrink, otherwise names get squeezed */
 .top-nav a {
-  font-weight: 500; padding: .4rem .2rem; color: #2c3e4e;
-  border-bottom: 2px solid transparent; transition: border-color .2s;
+  flex: 0 0 auto;                     /* keep natural width, no shrink */
+  font-weight: 500;
+  padding: .4rem .2rem;
+  color: #2c3e4e;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s, color .2s;
   text-decoration: none;
 }
 .top-nav a:hover { border-bottom-color: #b7a68b; }
+
+/* Active menu item — current page / current author */
+.top-nav a.active {
+  color: #0e1a2b;
+  font-weight: 600;
+  border-bottom-color: #1e1e2a;       /* persistent underline */
+}
 
 /* ---------- Home: author cards ---------- */
 .authors-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem; }

@@ -45,12 +45,38 @@
   }
 
   // ---------- TOP NAV ----------
+  // Marks the current page (Home or a specific author) as .active,
+  // then scrolls that item into view so it's visible on screen.
   function renderNav() {
     const nav = $('#topNav');
     if (!nav) return;
+
+    const page = document.body.dataset.page;
+    let activeId = null;
+    if (page === 'author') {
+      activeId = new URLSearchParams(location.search).get('id');
+    }
+
     nav.innerHTML =
-      `<a href="index.html">${t('home')}</a>` +
-      AUTHORS.map(a => `<a href="author.html?id=${a.id}">${a.name}</a>`).join('');
+      `<a href="index.html" class="${page === 'home' ? 'active' : ''}">${t('home')}</a>` +
+      AUTHORS.map(a => {
+        const cls = (a.id === activeId) ? 'active' : '';
+        return `<a href="author.html?id=${a.id}" class="${cls}">${a.name}</a>`;
+      }).join('');
+
+    // Scroll the active menu item into the visible area (centered).
+    // Uses requestAnimationFrame so it runs after the browser has
+    // laid out the new nav items.
+    requestAnimationFrame(() => {
+      const activeEl = nav.querySelector('a.active');
+      if (activeEl) {
+        activeEl.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      }
+    });
   }
 
   // ---------- HOME PAGE ----------
